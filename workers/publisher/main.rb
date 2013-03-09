@@ -6,7 +6,7 @@ require 'cgi'
 #parsed = JSON.parse(cgi_parsed['payload'][0])
 #p "parsed: #{parsed.inspect}"
 
-#fooo
+#foooo
 
 
 #cgi_parsed = CGI::parse(payload)
