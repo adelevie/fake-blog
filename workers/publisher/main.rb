@@ -1,5 +1,8 @@
 require 'cgi'
 require 'erb'
+require 'configuration'
+
+config = Configuration.keys
 
 cgi_parsed = CGI::parse(payload)
 parsed = JSON.parse(cgi_parsed['payload'][0])
@@ -9,17 +12,26 @@ owner_name = parsed["repository"]["owner"]["name"]
 
 clone_url = "git://github.com/#{owner_name}/#{repo_name}.git"
 
+
+p "cloning repo"
 `git clone #{clone_url}`
+p "done cloning repo"
 
+p "changing repo"
 Dir.chdir(repo_name)
+p "done changing repo"
 
-p `ls`
 
-
+p "writing _jekyll-s3.yml file"
 open('_jekyll-s3.yml', 'w') { |f|
-  f << "s3_id: YOUR_AWS_S3_ACCESS_KEY_ID\n"
-  f << "s3_secret: YOUR_AWS_S3_SECRET_ACCESS_KEY\n"
-  f << "s3_bucket: your.blog.bucket.com\n"
+  f << "s3_id: #{config['aws_s3']['id']}\n"
+  f << "s3_secret: #{config['aws_s3']['secret']}\n"
+  f << "s3_bucket: #{config['aws_s3']['bucket']}\n"
 }
+p "done writing _jekyll-s3.yml file"
 
-p `cat _jekyll-s3.yml`
+p "generating jekyll pages"
+p `jekyll --server`
+
+p "uploading to s3"
+p `jekyll-s3`
