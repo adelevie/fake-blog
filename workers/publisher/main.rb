@@ -1,6 +1,6 @@
 require 'cgi'
 
-`apt-get install git`
+`git clone `
 
 puts payload.class
 puts payload
@@ -14,3 +14,5 @@ p "json parsing"
 
 parsed = JSON.parse(cgi_parsed['payload'][0])
 p "parsed: #{parsed.inspect}"
+
+p parsed["repository"]
