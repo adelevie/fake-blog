@@ -10,3 +10,4 @@ Thumbs.db
 .rvmrc
 
 workers/publisher/iron.json
+workers/configuration.rb
