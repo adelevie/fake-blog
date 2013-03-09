@@ -30,6 +30,9 @@ open('_jekyll-s3.yml', 'w') { |f|
 }
 p "done writing _jekyll-s3.yml file"
 
+p "install jekyll gem"
+p `gem install jekyll`
+
 p "generating jekyll pages"
 p `jekyll --server`
 

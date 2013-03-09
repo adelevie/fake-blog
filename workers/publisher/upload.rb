@@ -8,7 +8,7 @@ client = IronWorkerNG::Client.new(:token => config['ironio']['token'], :project_
 code = IronWorkerNG::Code::Ruby.new
 code.merge_worker 'main.rb'
 code.merge_file '../configuration.rb'
-code.merge_gem 'jekyll'
+#code.merge_gem 'jekyll'
 code.merge_gem 'jekyll-s3'
  
 client.codes.create(code)
