@@ -9,6 +9,9 @@ require 'cgi'
 #fooo
 
 
-cgi_parsed = CGI::parse(payload)
-push = JSON.parse(cgi_parsed)
-p push
+#cgi_parsed = CGI::parse(payload)
+#push = JSON.parse(cgi_parsed)
+#p push
+
+puts payload.class
+puts payload
