@@ -10,5 +10,5 @@ require 'cgi'
 
 
 cgi_parsed = CGI::parse(payload)
-push = JSON.parse(cgi_parsed["payload"])
-p "I got some JSON: #{push.inspect}"
+push = JSON.parse(cgi_parsed)
+p "I got some JSON: #{push['payload'].inspect}"
