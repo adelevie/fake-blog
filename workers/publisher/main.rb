@@ -22,7 +22,7 @@ Dir.chdir(repo_name)
 p "done changing repo"
 
 
-p "writing _jekyll-s3.yml file"
+p "writing _jekyll_s3.yml file"
 open('_jekyll-s3.yml', 'w') { |f|
   f << "s3_id: #{config['aws_s3']['id']}\n"
   f << "s3_secret: #{config['aws_s3']['secret']}\n"
