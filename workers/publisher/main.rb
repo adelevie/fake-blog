@@ -34,7 +34,8 @@ p "install jekyll gem"
 p `gem install jekyll`
 
 p "generating jekyll pages"
-p `jekyll --no-auto`
+#p `jekyll --no-auto`
+p `/task/__gems__/gems/jekyll-0.12.1/bin/jekyll --no-auto`
 
 p "uploading to s3"
 p `jekyll-s3`
