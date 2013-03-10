@@ -23,13 +23,13 @@ p "done changing repo"
 
 
 p "writing _jekyll_s3.yml file"
-open('_jekyll-s3.yml', 'w') { |f|
+open('_jekyll_s3.yml', 'w') { |f|
   f << "s3_id: #{config['aws_s3']['id']}\n"
   f << "s3_secret: #{config['aws_s3']['secret']}\n"
   f << "s3_bucket: #{config['aws_s3']['bucket']}\n"
 }
 p "done writing _jekyll-s3.yml file:"
-p `cat _jekyll-s3.yml`
+p `cat _jekyll_s3.yml`
 
 p "install jekyll gem"
 p `gem install jekyll`
