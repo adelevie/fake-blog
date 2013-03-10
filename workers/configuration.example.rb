@@ -2,9 +2,13 @@ class Configuration
   def self.keys
     {
       "aws_s3" => {
-        "id"     => "myid",
-        "secret" => "mysecret",
-        "bucket" => "mybucket"
+        "id"     => "myId",
+        "secret" => "mySecret",
+        "bucket" => "myBucket"
+      },
+      "ironio" => {
+        "project_id" => "myProjectId",
+        "token"      => "myToken"
       }
     }
   end

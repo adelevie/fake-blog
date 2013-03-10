@@ -1,5 +1,0 @@
-runtime "ruby"
-exec "main.rb"
-
-#file "../configuration.rb"
-#gem "jekyll-s3"
