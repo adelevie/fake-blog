@@ -28,7 +28,8 @@ open('_jekyll-s3.yml', 'w') { |f|
   f << "s3_secret: #{config['aws_s3']['secret']}\n"
   f << "s3_bucket: #{config['aws_s3']['bucket']}\n"
 }
-p "done writing _jekyll-s3.yml file"
+p "done writing _jekyll-s3.yml file:"
+p `cat _jekyll-s3.yml`
 
 p "install jekyll gem"
 p `gem install jekyll`
@@ -38,4 +39,4 @@ p "generating jekyll pages"
 p `/task/__gems__/gems/jekyll-0.12.1/bin/jekyll --no-auto`
 
 p "uploading to s3"
-p `jekyll-s3`
+p `/task/__gems__/gems/jekyll-s3-0.0.5/bin/jekyll-s3`
