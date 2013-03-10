@@ -10,6 +10,8 @@ code.merge_worker 'main.rb'
 code.merge_file '../configuration.rb'
 #code.merge_gem 'jekyll'
 code.merge_gem 'jekyll-s3'
+
+#foo
  
 client.codes.create(code)
  
