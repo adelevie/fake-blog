@@ -34,7 +34,7 @@ p "install jekyll gem"
 p `gem install jekyll`
 
 p "generating jekyll pages"
-p `jekyll --server`
+p `jekyll --no-auto`
 
 p "uploading to s3"
 p `jekyll-s3`
